@@ -21,7 +21,7 @@ int charityFees = 1;//% благотворительность
         worker_fio = s1;
     }
     
-    // TODO: Check empty first name and empty last name
+    // TODO: Check empty first name and empty last name.
     string[] arr = worker_fio.Split(" ");
     string firstName = arr[0];
     string secondName = arr[1];
