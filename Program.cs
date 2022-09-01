@@ -53,6 +53,7 @@ int charityFees = 1;//% благотворительность
         Console.WriteLine("Пенсионный фонд ( " + pensionFund + "% ): " + pensionFundSum);
         Console.WriteLine("Благотворительность ( " + charityFees + "% ): " + charityFeesSum);
         Console.WriteLine("");
+        // TODO: Call my method
         PrintInfo(sumAllFees, baseSalarySum - sumAllFees);
     }
     else
