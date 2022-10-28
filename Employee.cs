@@ -11,7 +11,7 @@ namespace FirstConsoleApp
         private string _lastName { get; set; }
         private int _experienceYears { get; set; } = 0;
         private int _passedExamsCount { get; set; } = 0;
-        internal string Error { get; set; }
+        internal string Error { get; set; }="";
 
         public Employee(string fn, string ln, int years, int examsCount)
         {
@@ -31,13 +31,13 @@ namespace FirstConsoleApp
                 return -1;
             }
 
-            if (_experienceYears < 0)
+            if (_experienceYears <= 0)
             {
                 Error = "Invalid value: <years experience>";
                 return -1;
             }
 
-            if (_passedExamsCount < 0)
+            if (_passedExamsCount <= 0)
             {
                 Error = "Invalid value: <number of exams passed>";
                 return -1;
@@ -51,7 +51,7 @@ namespace FirstConsoleApp
 
             if (_passedExamsCount > 10)
             {
-                result = result + result * 10 / 100;
+                result = result + result * 15 / 100;
             }
             return result;
         }
