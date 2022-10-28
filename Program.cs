@@ -10,8 +10,8 @@ int additionalSocialInsurance = 10;//% мед. страховка
 int pensionFund = 5;//% в пенсионный фонд
 int charityFees = 1;//% благотворительность
 
-//for (int i = 0; i < 3; i++)
-//{
+for (int i = 0; i < 3; i++)
+{
     string? worker_fio = "<не указан>";
     // FIXME: Check value for empty string
     Console.Write("Введите ФИО сотрудника: ");
@@ -33,6 +33,14 @@ int charityFees = 1;//% благотворительность
     {
         Employee employee = new Employee(firstName, secondName,7,8);
         baseSalarySum = employee.getIncomeSum(baseSalarySum);
+        if (baseSalarySum < 0)
+        {
+           Console.ForegroundColor = ConsoleColor.Red;
+           Console.WriteLine(employee.Error + " !!!");
+           Console.ResetColor();
+           continue;
+        }
+
         socialInsurance = getSocialInsurance(baseSalarySum);
         int incomeTaxSum = incomeTax * baseSalarySum / 100;
         int socialInsuranceSum = socialInsurance * baseSalarySum / 100;
@@ -62,7 +70,7 @@ int charityFees = 1;//% благотворительность
         Console.WriteLine("Веденна некорректная сумма оклада!");
         Console.ResetColor();
     }
-//}
+}
 
 static int SumAllFees(int incomeTaxSum, int socialInsuranceSum, int additionalSocialInsuranceSum, int pensionFundSum, int charityFeesSum)
 {
